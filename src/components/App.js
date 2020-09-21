@@ -19,11 +19,15 @@ function App() {
       <html lang="en">
         <head>
           <title>CodeMirror Clone</title>
-          <style>${css}</style>
+          <style>
+            ${css}
+          </style>
         </head>
         <body>
           ${html}
-          <script>${js}</script>
+          <script>
+            ${js}
+          </script>
         </body>
       </html>
       `)
@@ -32,10 +36,43 @@ function App() {
     return () => clearTimeout(timeout);
   }, [html, css, js])
   
+  const download = type => {
+    let target;
+    let extension;
+    switch (type) {
+      case "html":
+        target = html
+        break
+      case "css":
+        target = css
+        extension = "css"
+        break
+      case "js":
+        target = js
+        extension = "js"
+        break
+      default:
+        target = srcDoc;
+        extension = "html"
+        break
+    }
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(target));
+    element.setAttribute('download', "index." + extension);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+    return null
+  }
+  
   return (
     <>
       <div className="nav-pane">
-      <Navbar />
+      <Navbar download={download} />
       </div>
       <div className="editor-pane top-pane">
         <Editor
