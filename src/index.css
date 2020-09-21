@@ -105,3 +105,19 @@ span.logo {
   border: none;
   margin-right: .5rem;
 }
+
+button.download-btn.HTML {
+  background-color: #e85920;
+}
+
+button.download-btn.CSS {
+  background-color: #2048e8;
+}
+
+button.download-btn.JS {
+  background-color: #e8b920;
+}
+
+button.download-btn.ALL {
+  background-color: #4bbd2b;
+}
