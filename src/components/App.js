@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 // Components
 import Editor from "./Editor";
@@ -7,6 +7,26 @@ function App() {
   const [html, setHtml] = useState("");
   const [css, setCss] = useState("");
   const [js, setJs] = useState("");
+  const [srcDoc, setSrcDoc] = useState("");
+  
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSrcDoc(`
+      <html lang="en">
+        <head>
+          <title>CodeMirror Clone</title>
+          <style>${css}</style>
+        </head>
+        <body>
+          ${html}
+          <script>${js}</script>
+        </body>
+      </html>
+      `)
+    }, 750);
+    
+    return () => clearTimeout(timeout);
+  }, [html, css, js])
   
   return (
     <>
@@ -32,6 +52,7 @@ function App() {
       </div>
       <div className="pane">
         <iframe
+          srcDoc={srcDoc}
           title="output"
           sandbox="allow-scripts"
           frameBorder="0"
