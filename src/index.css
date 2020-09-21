@@ -6,12 +6,18 @@ body {
   background-color: hsl(225, 6%, 25%);
 }
 
-.pane {
-  height: 50vh;
+.nav-pane {
+  height: 6vh;
+  background-color: hsl(225, 20%, 13%);
+}
+
+.editor-pane {
+  height: 47vh;
   display: flex;
 }
 
 .editor-container {
+  float: none;
   flex-grow: 1;
   flex-basis: 0;
   display: flex;
@@ -57,4 +63,45 @@ body {
   border-bottom-right-radius: .5rem;
   border-bottom-left-radius: .5rem;
   overflow: hidden;
+}
+
+ul.navbar {
+  list-style-type: none;
+  margin: auto;
+  padding: 0 0;
+}
+
+ul.navbar li {
+  display: inline;
+  float: right;
+  padding-right: .5rem;
+}
+
+button.download-btn {
+  background: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 6px;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border-color: hsl(225, 6%, 25%);
+  border-radius: 5px;
+}
+
+span.logo {
+  float: left;
+  color: white;
+  margin-top: 3px;
+  margin-left: 10px;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.download-icon {
+  background: none;
+  border: none;
+  margin-right: .5rem;
 }

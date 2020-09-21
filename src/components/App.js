@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 // Components
 import Editor from "./Editor";
+import Navbar from "./Navbar";
 
 // Hooks
 import useLocalStorage from "../hooks/useLocalStorage";
@@ -33,7 +34,10 @@ function App() {
   
   return (
     <>
-      <div className="pane top-pane">
+      <div className="nav-pane">
+      <Navbar />
+      </div>
+      <div className="editor-pane top-pane">
         <Editor
           language="xml"
           displayName="HTML"
@@ -53,7 +57,7 @@ function App() {
           onChange={setJs}
         />
       </div>
-      <div className="pane">
+      <div className="editor-pane">
         <iframe
           srcDoc={srcDoc}
           title="output"
