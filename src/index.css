@@ -16,7 +16,7 @@ body {
   flex-basis: 0;
   display: flex;
   flex-direction: column;
-  padding: .5rem;
+  padding: .3rem;
   background-color: hsl(225, 6%, 25%);
 }
 
@@ -27,6 +27,15 @@ body {
 /* Collapse irrespective of the length of text */
 .editor-container.collapsed .CodeMirror-scroll {
   position: absolute;
+  overflow: hidden !important;
+}
+
+.expand-collapse-btn {
+  margin-left: .5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .editor-title {
