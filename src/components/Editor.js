@@ -34,7 +34,7 @@ const Editor = (props) => {
           className="expand-collapse-btn"
           onClick={() =>  setOpen(prevState => !prevState)}
         >
-          <FontAwesomeIcon icon={open ? faCompressAlt : faExpandAlt} />
+          <FontAwesomeIcon size="lg" icon={open ? faCompressAlt : faExpandAlt} />
         </button>
       </div>
       
